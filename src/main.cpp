@@ -3,7 +3,7 @@
 #include <random>
 #include <chrono>
 
-const int size = 100;
+const int size = 1000;
 
 void generateMATRIX(const int size, std::vector<std::vector<int>>& matrix) {
 	matrix.resize(size, std::vector<int>(size));
@@ -27,7 +27,7 @@ void generateMATRIX(const int size, std::vector<std::vector<int>>& matrix) {
 	//}
 };
 
-void OncClumns(const std::vector<std::vector<int>>& matrix) {
+void OnColumns(const std::vector<std::vector<int>>& matrix) {
 	int num = 0;
 	for (int j = 0; j < size; j++) {
 		for (int i = 0; i < size; i++) {
@@ -60,7 +60,7 @@ int main()
 	auto timeEndOnLines = std::chrono::high_resolution_clock::now();
 
 	auto timeStartOnColumns = std::chrono::high_resolution_clock::now();
-	OncClumns(matrix);
+	OnColumns(matrix);
 	auto timeEndOnColumns = std::chrono::high_resolution_clock::now();
 
 	std::chrono::duration<double> durationOnLines = timeEndOnLines - timeStartOnLines;
@@ -71,4 +71,5 @@ int main()
 
 	return 0;
 }
+
 
