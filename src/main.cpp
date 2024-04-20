@@ -55,7 +55,7 @@ int main()
 	std::vector<std::vector<int>> matrix;
 	generateMATRIX(size, matrix);
 
-	auto timeStartOnClumns = std::chrono::high_resolution_clock::now();
+	auto timeStartOnLines = std::chrono::high_resolution_clock::now();
 	OnLines(matrix);
 	auto timeEndOnLines = std::chrono::high_resolution_clock::now();
 
@@ -63,11 +63,12 @@ int main()
 	OncClumns(matrix);
 	auto timeEndOnColumns = std::chrono::high_resolution_clock::now();
 
-	std::chrono::duration<double> durationOnLines = timeEndOnLines - timeStartOnClumns;
-	std::cout << "Время, затраченное на перебор по столбцам: " << durationOnLines.count() << " seconds" << std::endl;
+	std::chrono::duration<double> durationOnLines = timeEndOnLines - timeStartOnLines;
+	std::cout << "Время, затраченное на перебор по строкам: " << durationOnLines.count() << " seconds" << std::endl;
 
 	std::chrono::duration<double> durationOnColumns = timeEndOnColumns - timeStartOnColumns;
-	std::cout << "Время, затраченное на перебор по строкам: " << durationOnColumns.count() << " seconds" << std::endl;
+	std::cout << "Время, затраченное на перебор по столбцам: " << durationOnColumns.count() << " seconds" << std::endl;
 
 	return 0;
 }
+
