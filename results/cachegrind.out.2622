@@ -1,4 +1,4 @@
-desc: I1 cache:         32768 B, 64 B, 8-way associative
+﻿desc: I1 cache:         32768 B, 64 B, 8-way associative
 desc: D1 cache:         49152 B, 64 B, 12-way associative
 desc: LL cache:         12582912 B, 64 B, 12-way associative
 cmd: ./OnCulmns

@@ -1,7 +1,7 @@
-//команада (Тестирование перебора по строкам)
+п»ї//РєРѕРјР°РЅР°РґР° (РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РїРµСЂРµР±РѕСЂР° РїРѕ СЃС‚СЂРѕРєР°Рј)
 root@Denis:~/Programms/Memory_profiling/Memory_profiling/src# valgrind --tool=cachegrind ./OnLines
 
-//Резултат
+//Р РµР·СѓР»С‚Р°С‚
 
 ==2625== Cachegrind, a cache and branch-prediction profiler
 ==2625== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
@@ -11,8 +11,8 @@ root@Denis:~/Programms/Memory_profiling/Memory_profiling/src# valgrind --tool=ca
 --2625-- warning: L3 cache found, using its data for the LL simulation.
 --2625-- warning: specified LL cache: line_size 64  assoc 8  total_size 12,582,912
 --2625-- warning: simulated LL cache: line_size 64  assoc 12  total_size 12,582,912
-По столбцам 50465268
-Время, затраченное на перебор по столбцам: 0.112011 seconds
+РџРѕ СЃС‚РѕР»Р±С†Р°Рј 50465268
+Р’СЂРµРјСЏ, Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° РїРµСЂРµР±РѕСЂ РїРѕ СЃС‚РѕР»Р±С†Р°Рј: 0.112011 seconds
 ==2625==
 ==2625== I   refs:      276,647,521
 ==2625== I1  misses:          3,086
@@ -31,10 +31,10 @@ root@Denis:~/Programms/Memory_profiling/Memory_profiling/src# valgrind --tool=ca
 ==2625== LL miss rate:          0.0% (        0.0%     +        0.1%  )
 
 
-//команда (Тестирование перебора по столбцам)
+//РєРѕРјР°РЅРґР° (РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РїРµСЂРµР±РѕСЂР° РїРѕ СЃС‚РѕР»Р±С†Р°Рј)
 root@Denis:~/Programms/Memory_profiling/Memory_profiling/src# valgrind --tool=cachegrind ./OnCulmns
 
-//Резултат
+//Р РµР·СѓР»С‚Р°С‚
 
 ==2622== Cachegrind, a cache and branch-prediction profiler
 ==2622== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
@@ -44,8 +44,8 @@ root@Denis:~/Programms/Memory_profiling/Memory_profiling/src# valgrind --tool=ca
 --2622-- warning: L3 cache found, using its data for the LL simulation.
 --2622-- warning: specified LL cache: line_size 64  assoc 8  total_size 12,582,912
 --2622-- warning: simulated LL cache: line_size 64  assoc 12  total_size 12,582,912
-По столбцам 50508136
-Время, затраченное на перебор по столбцам: 0.0946986 seconds
+РџРѕ СЃС‚РѕР»Р±С†Р°Рј 50508136
+Р’СЂРµРјСЏ, Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° РїРµСЂРµР±РѕСЂ РїРѕ СЃС‚РѕР»Р±С†Р°Рј: 0.0946986 seconds
 ==2622==
 ==2622== I   refs:      276,648,251
 ==2622== I1  misses:          3,090
@@ -65,10 +65,10 @@ root@Denis:~/Programms/Memory_profiling/Memory_profiling/src# valgrind --tool=ca
 
 
 
-//Вывод:
+//Р’С‹РІРѕРґ:
 
-При переборе матрицы по столбцам время выполнения немного меньше, 
-чем при переборе по строкам. Однако, перебор по столбцам имеет больше промахов в кэше данных
-по сравнению с перебором по строкам. Это связано с тем, что при переборе по столбцам 
-происходит доступ к элементам памяти в не последовательном порядке, 
-что затруднит кэширование данных и увеличит количество промахов в кэше.
+РџСЂРё РїРµСЂРµР±РѕСЂРµ РјР°С‚СЂРёС†С‹ РїРѕ СЃС‚РѕР»Р±С†Р°Рј РІСЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ РЅРµРјРЅРѕРіРѕ РјРµРЅСЊС€Рµ, 
+С‡РµРј РїСЂРё РїРµСЂРµР±РѕСЂРµ РїРѕ СЃС‚СЂРѕРєР°Рј. РћРґРЅР°РєРѕ, РїРµСЂРµР±РѕСЂ РїРѕ СЃС‚РѕР»Р±С†Р°Рј РёРјРµРµС‚ Р±РѕР»СЊС€Рµ РїСЂРѕРјР°С…РѕРІ РІ РєСЌС€Рµ РґР°РЅРЅС‹С…
+РїРѕ СЃСЂР°РІРЅРµРЅРёСЋ СЃ РїРµСЂРµР±РѕСЂРѕРј РїРѕ СЃС‚СЂРѕРєР°Рј. Р­С‚Рѕ СЃРІСЏР·Р°РЅРѕ СЃ С‚РµРј, С‡С‚Рѕ РїСЂРё РїРµСЂРµР±РѕСЂРµ РїРѕ СЃС‚РѕР»Р±С†Р°Рј 
+РїСЂРѕРёСЃС…РѕРґРёС‚ РґРѕСЃС‚СѓРї Рє СЌР»РµРјРµРЅС‚Р°Рј РїР°РјСЏС‚Рё РІ РЅРµ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕРј РїРѕСЂСЏРґРєРµ, 
+С‡С‚Рѕ Р·Р°С‚СЂСѓРґРЅРёС‚ РєСЌС€РёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… Рё СѓРІРµР»РёС‡РёС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕРјР°С…РѕРІ РІ РєСЌС€Рµ.
