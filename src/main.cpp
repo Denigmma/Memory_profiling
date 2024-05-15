@@ -3,7 +3,7 @@
 #include <random>
 #include <chrono>
 
-const int size = 1000;
+const int size = 30000;
 
 void generateMATRIX(const int size, std::vector<std::vector<int>>& matrix) {
 	matrix.resize(size, std::vector<int>(size));
